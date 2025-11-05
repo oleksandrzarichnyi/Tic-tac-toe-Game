@@ -3,7 +3,6 @@ import PlayerSide from './PlayerSide'
 import { useGameStore } from '../hooks/useGameStore.jsx'
 
 function PlayField() {
-
   const { resetGame, playerXScore, playerOScore } = useGameStore();
 
   return (

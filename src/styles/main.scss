@@ -9,3 +9,19 @@ body {
   color: white;
   font-family: 'Inter', sans-serif;
 }
+
+.chat-input {
+  background-color: inherit;
+  border-radius: 8px;
+  max-width: 528px;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::placeholder {
+    color: white;
+    font-size: 16px;
+  }
+}
