@@ -1,0 +1,71 @@
+@use './reset' as *;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: black;
+  color: white;
+  font-family: 'Inter', sans-serif;
+}
+
+.chat-input {
+  background-color: inherit;
+  border-radius: 8px;
+  max-width: 528px;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::placeholder {
+    color: white;
+    font-size: 16px;
+  }
+}
+
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.user-message,
+.companion-message {
+  max-width: 424px;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  padding: 4px 12px;
+  border-radius: 12px;
+  gap: 4px;
+}
+
+.user-message {
+  background-color: #00AE1C;
+  margin-left: auto;
+}
+
+.companion-message {
+  background-color: #737373;
+}
+
+.message-time {
+  font-size: 12px;
+  margin-left: auto;
+}
+
+.user-message + .user-message,
+.companion-message + .companion-message {
+  margin-top: 6px;
+}
+
+.user-message + .companion-message,
+.companion-message + .user-message {
+  margin-top: 24px;
+}
