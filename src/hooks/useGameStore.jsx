@@ -2,12 +2,16 @@ import { create } from 'zustand'
 
 import { checkWinner } from '../components/checkWinnerFunc'
 
-export const useGameStore = create((set, get) => ({
+const initialState = {
   board: Array(9).fill(null),
   currentPlayer: 'X',
   winner: null,
   playerXMessage: 'Game started! Your turn:',
   playerOMessage: 'Game started! Wait for your opponent.',
+}
+
+export const useGameStore = create((set, get) => ({
+  ...initialState,
   playerXScore: 0,
   playerOScore: 0,
 
@@ -70,12 +74,6 @@ export const useGameStore = create((set, get) => ({
   },
 
   resetGame: () => {
-    set({
-      board: Array(9).fill(null),
-      currentPlayer: 'X',
-      winner: null,
-      playerXMessage: 'Game started! Your turn:',
-      playerOMessage: 'Game started! Wait for your opponent.',
-    })
+    set({ ...initialState })
   }
 }))
